@@ -22,13 +22,13 @@ $ cat log.txt
 {"id": 2, "log": { "message": "More messages!", "level": "WARN" }}
 {"id": 3, "log": { "message": "Something went wrong!", "level": "ERROR" }}
 
-$ jq --slurp '.[].id' < log.txt
+$ jq --slurp '.[].id' log.txt
 1
 2
 3
 
-$ jq --slurp 'map(select(.log.level == "ERROR") | .log.message)' < log.txt
+$ jq --slurp 'map(select(.log.level == "ERROR") | .log.message)' log.txt
 [
-    "Something went wrong!",
+    "Something went wrong!"
 ]
 ```
