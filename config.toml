@@ -1,11 +1,22 @@
 # The URL the site will be built for
 base_url = "https://eureka.redwill.se"
 
+generate_feed = true
+title = "Eureka!"
+description = "Personal micro-blog where I write about new interesting things that I learn about (and which I bother writing down)"
+
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = false
 
 # Whether to build a search index to be used later on by a JavaScript library
-build_search_index = true
+build_search_index = false
+
+theme = "after-dark"
+
+taxonomies = [
+    { name = "categories"},
+    { name = "tags" }
+]
 
 [markdown]
 # Whether to do syntax highlighting
@@ -14,3 +25,14 @@ highlight_code = true
 
 [extra]
 # Put all your custom variables here
+
+after_dark_title = "Eureka! · Personal micro-blog where I write about new interesting things that I learn about (and which I bother writing down)"
+
+after_dark_menu = [
+    {url = "$BASE_URL", name = "Home"},
+    {url = "$BASE_URL/categories", name = "Categories"},
+    {url = "$BASE_URL/tags", name = "Tags"},
+    {url = "https://github.com/williamboman", name = "GitHub"},
+]
+
+author = "William"
