@@ -1,0 +1,11 @@
+{% extends "after-dark/templates/index.html" %}
+{% block title %}{{ config.title }}{% endblock %}
+
+{% block extra_head %}
+    <meta property="og:locale" content="en"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="{{ config.title }}"/>
+    <meta property="og:title" content="{{ config.title }}"/>
+    <meta property="og:description" content="{{ config.description | truncate(length = 190)}}"/>
+    <meta property="twitter:card" content="summary"/>
+{% endblock extra_head %}

@@ -36,3 +36,6 @@ after_dark_menu = [
 ]
 
 author = "William"
+
+[extra.open_graph]
+site_name = "Eureka!"
