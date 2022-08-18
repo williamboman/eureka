@@ -43,16 +43,16 @@ bsl_ls
 ccls
 
 $ comm file1 file2
-angularls
-ansiblels
-arduino_language_server
-asm_lsp
-awk_ls
-bashls
-beancount
-bicep
-bsl_ls
-ccls
+        angularls
+        ansiblels
+                arduino_language_server
+        asm_lsp
+        awk_ls
+        bashls
+                beancount
+                bicep
+                bsl_ls
+                ccls
 clangd
 clarity_lsp
 clojure_lsp
