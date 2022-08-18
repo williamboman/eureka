@@ -7,6 +7,11 @@ categories=["unix"]
 tags=["jq"]
 +++
 
+`jq --slurp` conflates multiple JSON document inputs into a single array. This allow you to run a `jq` filter only once
+for all inputs, instead of once _per document_.
+
+<!-- more -->
+
 `jq` can transform JSON in various ways, by selecting, iterating, reducing and otherwise mangling JSON documents. For
 instance, running the command `jq 'map(.price) | add'` will take an array of JSON objects as input and return the sum of
 their "price" fields.

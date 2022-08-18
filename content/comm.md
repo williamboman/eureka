@@ -9,6 +9,8 @@ tags=["comm"]
 
 `comm` is a command line tool that allow you to compare two sorted files, line by line.
 
+<!-- more -->
+
 By default, its output will be structured as a table with three columns:
 
 - First column: contains lines that are unique to the first file
