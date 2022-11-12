@@ -7,15 +7,15 @@ categories=["unix"]
 tags=["comm"]
 +++
 
-`comm` is a command line tool that allow you to compare two sorted files, line by line.
+`comm` is a command line tool that allows you to compare two sorted files, line by line.
 
 <!-- more -->
 
 By default, its output will be structured as a table with three columns:
 
-- First column: contains lines that are unique to the first file
-- Second column: contains lines that are unique to the second file
-- Third column: contains lines that appear in both files
+-   First column: contains lines that are unique to the first file
+-   Second column: contains lines that are unique to the second file
+-   Third column: contains lines that appear in both files
 
 Example:
 

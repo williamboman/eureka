@@ -8,12 +8,12 @@ tags=["tls"]
 +++
 
 SNI (Server Name Indication) is an extension to the TLS protocol, introduced in 2003. It allows for a single server (or
-rather IP address) to host more than one domain and accept encrypted traffic for all of these.
+rather IP address) to host more than one domain and accept encrypted traffic for these.
 
 <!-- more -->
 
-In any modern infrastructure, it is not uncommon for a single server to be a host to a multitude of different domains.
-For example, I have a single VPS instance that hosts numerous amount of different web servers, all accessible via
+In any modern infrastructure, it's not uncommon for a single server to be a host to a multitude of different domains.
+For example, I have a single VPS instance that hosts a numerous amount of different web servers, all accessible via
 different subdomains:
 
 -   redwill.se
@@ -27,12 +27,12 @@ clients will still communicate with the very same IP address for these subdomain
 the same IP address for multiple domains gets a bit problematic for secure HTTPS connection. SNI helps solve this, let's
 take a look why:
 
-An SSL certificate (per [X.509][X509]) only applies to a single CN (common name, also known as FQDN - fully qualified
+An SSL certificate (per [X.509][x509]) only applies to a single CN (common name, also known as FQDN - fully qualified
 domain name). This effectively means that a distinct server (IP) only can host a single certificate (and by extension a
 single domain name capable of encrypted traffic). A TLS connection is not intrinsically aware of domain names - it only
 speaks TCP/IP - so by the time the TLS handshake has even started, any domain names involved have already unwrapped to
 their underlying IP (often long before the connection is established, due to DNS cache). This leads us to the
-introduction of SNI, via [Section 3.1 in RFC 3546][RFC3546]:
+introduction of SNI, via [Section 3.1 in RFC 3546][rfc3546]:
 
 SNI (Server Name Indication) solves this by allowing clients, during the very first stages of the TLS handshake, to
 provide an SNI in its `ClientHello` message. This gives servers the ability to know exactly which certificate it should
@@ -47,9 +47,8 @@ argument). Also note that we provide the IP to connect to in order to further il
 The `openssl` client does support providing domain names, however, as mentioned above the domain name is unwrapped
 before the TLS connection takes place.
 
-
 ```sh
-$ $ dig +short <my_vps>
+$ dig +short <my_vps>
 188.166.116.169
 
 # -servername redwill.se
@@ -74,5 +73,5 @@ notAfter=Sep 22 11:56:10 2022 GMT
 
 (we do `< /dev/null` to terminate stdin because `openssl s_client` is an interactive command that reads from stdin)
 
-[X509]: https://en.wikipedia.org/wiki/X.509
-[RFC3546]: https://www.ietf.org/rfc/rfc3546.txt
+[x509]: https://en.wikipedia.org/wiki/X.509
+[rfc3546]: https://www.ietf.org/rfc/rfc3546.txt

@@ -7,7 +7,7 @@ categories=["unix"]
 tags=["jq"]
 +++
 
-`jq --slurp` conflates multiple JSON document inputs into a single array. This allow you to run a `jq` filter only once
+`jq --slurp` conflates multiple JSON document inputs into a single array. This allows you to run a `jq` filter only once
 for all inputs, instead of once _per document_.
 
 <!-- more -->
