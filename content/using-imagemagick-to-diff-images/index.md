@@ -36,8 +36,10 @@ difference.
 
 ## Comparing images
 
-The `compare` command takes a `-highlight-color` option which controls the color to be used for the diff highlights (I
-prefer `seagreen`). Let's compare the two images and save the output to a png file called `compare.png`:
+We'll use the `compare` command to visually annotate differences between two input images. This command takes a
+`-highlight-color` option which controls the color to use for annotating the differences (I prefer `seagreen`). We'll
+use the defaults for the rest (do check the man page, there are tons of configuration options). Let's compare the two
+images and save the output to a png file called `compare.png`:
 
 ```sh
 compare 2.png 1.png -highlight-color seagreen png:compare.png
@@ -64,7 +66,7 @@ montage -geometry +4+4 2.png compare.png 1.png png:montage.png
 ## Leveraging stdout & stdin
 
 ImageMagick provides great support for pipes. We can use this to reduce the above commands into one, and in doing so we
-also avoid having to create intermediary files:
+also avoid having to create intermediary files (`-` as a filename represents stdout/stdin, per common conventions):
 
 ```
 compare 2.png 1.png -highlight-color seagreen png:- | montage -geometry +4+4 2.png - 1.png png:-
@@ -72,7 +74,7 @@ compare 2.png 1.png -highlight-color seagreen png:- | montage -geometry +4+4 2.p
 
 ## Conclusion
 
-ImageMagick is a very powerful tool with capabilities that exceed most people's expectations. Use it to automate image
+ImageMagick is a powerful tool with capabilities that exceed most people's expectations. Use it to automate image
 processing tasks! The following is a script that I use for simple comparisons (to use it: name it something cool, `chmod
 +x` it, and put it somewhere in your `PATH`).
 
