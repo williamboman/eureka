@@ -32,7 +32,7 @@ difference.
     <img src="2.png" width="100%" />
 </div>
 
-<h1>Comparing images</h1>
+## Comparing images
 
 The `compare` command takes a `-highlight-color` option which controls the color to be used for the diff highlights (I
 prefer `seagreen`). Let's compare the two images and save the output to a png file called `compare.png`:
