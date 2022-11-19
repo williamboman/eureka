@@ -32,6 +32,8 @@ difference.
     <img src="2.png" width="100%" />
 </div>
 
+-----
+
 ## Comparing images
 
 The `compare` command takes a `-highlight-color` option which controls the color to be used for the diff highlights (I
