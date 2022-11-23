@@ -97,3 +97,12 @@ else
     compare "$2" "$1" -highlight-color seagreen png:- | montage -geometry +4+4 "$2" - "$1" png:-;
 fi
 ```
+
+I keep this script in a user-local bin directory:
+
+```sh
+$ ls -l ~/.local/bin
+imgdiff
+
+$ imgdiff 1.png 2.png > diff.png
+```
