@@ -53,7 +53,7 @@ compare 2.png 1.png -highlight-color seagreen png:compare.png
 
 We now have three separate image files, the two original images and the visual diff. Let's combine them into one for
 convenience! The `montage` command allows us to do this - we'll use it to lay out the three images next to each other in
-the provided order:
+the order the images are provided:
 
 ```sh
 montage -geometry +4+4 2.png compare.png 1.png png:montage.png
@@ -65,8 +65,9 @@ montage -geometry +4+4 2.png compare.png 1.png png:montage.png
 
 ## Leveraging stdout & stdin
 
-ImageMagick provides great support for pipes. We can use this to reduce the above commands into one, and in doing so we
-also avoid having to create intermediary files (`-` as a filename represents stdout/stdin, per common conventions):
+ImageMagick provides great support for pipes. We can use this to reduce the above commands into a one-liner, and in
+doing so also avoid having to create intermediary files (`-` as a filename represents stdout/stdin, per common
+conventions):
 
 ```
 compare 2.png 1.png -highlight-color seagreen png:- | montage -geometry +4+4 2.png - 1.png png:-
