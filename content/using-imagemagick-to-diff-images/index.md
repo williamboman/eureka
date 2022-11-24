@@ -10,8 +10,8 @@ tags=["imagemagick"]
 ImageMagick is a well-known CLI tool that provides image processing capabilities. It can handle hundreds of different
 image formats and gives you a programmatic interface to create, edit, compose, and convert images. I personally use the
 `convert` command very often to resize an image (e.g., `convert -resize 300x300 -quality 100 source.png out.png`) or
-convert between different formats. ImageMagick also has a lesser known the ability to visually diff images, using its
-`compare` & `montage` commands.
+convert between different formats. ImageMagick also has the ability to produce a visual diff between two images, by
+using its `compare` & `montage` commands.
 
 <!-- more -->
 
